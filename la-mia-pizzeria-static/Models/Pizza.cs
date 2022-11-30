@@ -1,24 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Xml.Schema;
 
 namespace la_mia_pizzeria_static.Models
 {
     public class Pizza
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+        public float Price { get; set; }
 
-        [Column(TypeName = "text")]
-        public string Descrizione { get; set; }
-        //public string Image { get; set; }
+        
 
-        public int Prezzo { get; set; }
-
-
-        public Pizza(string nome, string descrizione, int prezzo)
+        public Pizza(int id, string name, string description, string image, float price)
         {
-            this.Nome = nome;
-            this.Descrizione = descrizione;
-            this.Prezzo = prezzo;
+            Id = id;
+            Name = name;
+            Description = description;
+            Image = image;
+            Price = price;
         }
     }
 }
