@@ -13,10 +13,11 @@
                 <div class="card-body">
                     <h5 class="card-title">Pizza: @pizza.Name</h5>
                     <p class="card-text fs-6">Descrizione: @pizza.Description</p>
-                    <div>Prezzo: @pizza.Price €</div>
                 </div>
-                <div class="card-footer"> 
-                    <div>
+                
+                <div class="card-footer">
+                    <div>Prezzo: @pizza.Price €</div>
+                    <div class="mt-2">
                         <button type="button" class="btn btn-primary">
                             <a href="@Url.Action("Dettagli", new {id = pizza.Id})">Dettagli</a>
                         </button>
