@@ -1,7 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    
-}
+﻿<h1>Home</h1>
 
+@*Inizializzazione property Model RazorPage*@
+@model List<Pizza>
+
+    @if(Model.Count() == 0){
+        <div>Non ci sono pizze</div>
+    }else{
+    <div class="text-center d-flex">
+        @foreach(Pizza pizza in Model){
+            <div class="card mx-2 mt-2" style="width: 18rem;">
+                <img class="card-img-top" src="@pizza.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Pizza: @pizza.Name</h5>
+                    <p class="card-text">Descrizione: @pizza.Description</p>
+                </div>
+                <div class="card-footer">
+                    <div>Prezzo: @pizza.Price €</div>
+                </div>
+            </div>
+        }
+    </div>
+    }
+
+<style>
+    .card-img-top {
+        height: 200px;
+    }
+</style>
