@@ -1,4 +1,4 @@
-﻿<h1>Home</h1>
+﻿<h1>Lista pizze</h1>
 
 @*Inizializzazione property Model RazorPage*@
 @model List<Pizza>
@@ -9,6 +9,7 @@
     <div class="text-center d-flex">
         @foreach(Pizza pizza in Model){
             <div class="card mx-2 mt-2" style="width: 18rem;">
+                <div>@pizza.Id</div>
                 <img class="card-img-top" src="@pizza.Image" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Pizza: @pizza.Name</h5>
