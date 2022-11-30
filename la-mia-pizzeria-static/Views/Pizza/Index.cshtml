@@ -9,14 +9,18 @@
     <div class="text-center d-flex">
         @foreach(Pizza pizza in Model){
             <div class="card mx-2 mt-2" style="width: 18rem;">
-                <div>@pizza.Id</div>
                 <img class="card-img-top" src="@pizza.Image" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Pizza: @pizza.Name</h5>
-                    <p class="card-text">Descrizione: @pizza.Description</p>
-                </div>
-                <div class="card-footer">
+                    <p class="card-text fs-6">Descrizione: @pizza.Description</p>
                     <div>Prezzo: @pizza.Price €</div>
+                </div>
+                <div class="card-footer"> 
+                    <div>
+                        <button type="button" class="btn btn-primary">
+                            <a href="@Url.Action("Dettagli", new {id = pizza.Id})">Dettagli</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         }
@@ -26,5 +30,11 @@
 <style>
     .card-img-top {
         height: 200px;
+    }
+
+    a {
+        width: 100px;
+        height: 30px;
+        color: white; 
     }
 </style>
