@@ -18,6 +18,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//x la parte di identity
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
